@@ -1,7 +1,7 @@
 FROM alpine
 LABEL maintainer makotookamura
 
-WORKDIR /samurai
+WORKDIR /temp_samurai
 
 RUN apk add --no-cache --virtual .buildlibs build-base boost-dev && \
     ln -sf /usr/local/bin/gcc-6 /usr/local/bin/gcc && \
@@ -14,4 +14,10 @@ RUN apk add --no-cache --virtual .buildlibs build-base boost-dev && \
     apk add --no-cache libstdc++ libgcc vim && \
     ln -sf vim /usr/bin/vi
 
+ADD cp_source.sh /
+
 VOLUME [ "/samurai" ]
+
+WORKDIR /samurai
+
+CMD [ "sh", "/cp_source.sh" ]

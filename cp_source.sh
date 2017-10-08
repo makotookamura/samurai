@@ -1,0 +1,1 @@
+if test -e /samurai/*; then cp -r /temp_samurai/* /samurai/; fi
