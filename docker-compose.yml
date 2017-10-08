@@ -1,0 +1,7 @@
+version: '3'
+services:
+  official:
+    image: makotookamura/samurai-official
+    volumes:
+      - ./samurai:/samurai
+    tty: true

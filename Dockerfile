@@ -13,3 +13,5 @@ RUN apk add --no-cache --virtual .buildlibs build-base boost-dev && \
     apk del --no-cache .buildlibs && \
     apk add --no-cache libstdc++ libgcc vim && \
     ln -sf vim /usr/bin/vi
+
+VOLUME [ "/samurai" ]
